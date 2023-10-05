@@ -1,9 +1,8 @@
 from Clases.MazeSolver import MazeSolver
 from Clases.Control import Control
 from Clases.Graficar import mostrar_soluciones
-from game2dboard import * 
 import csv
-import time
+
 
 class Main :
     def main():        
@@ -17,9 +16,6 @@ class Main :
         cuadrado = Control.check_zero_squares(maze2)
         cuadradoUnos = Control.check_one_squares(maze2)
         verificar_entrada_salida = Control.check_one_exit(maze2)
-        
-        
-        
         mazeSolver = MazeSolver()
         
         if verificar_entrada_salida == True and cuadrado == False and cuadradoUnos == False:
@@ -28,24 +24,7 @@ class Main :
                 print("Se encontraron las siguientes soluciones:")
                 for solucion in mazeSolver.todas_las_soluciones:
                     print(solucion)
-                    coordenadas = solucion
-                
-                    x, y = zip(*coordenadas)
-                    
-                    b = Board(len(maze2[0]), len(maze2))
-                    
-                    b.title = "Laberinto"
-                    b.cell_size = 60       
-                    b.cell_color = "dark green"
-                    
-                    '''def  cambiar():
-                        for i, j in zip(x, y):
-                            b[i][j] = "cuadro" 
-                        
-                            
-                    b.on_start = cambiar
-                    
-                    b.show()'''
+               
             else :
                 print("No se encontró una solución")
         else:

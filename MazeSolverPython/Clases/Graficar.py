@@ -15,7 +15,7 @@ def mostrar_soluciones(maze, soluciones):
         # Marca el camino de la solución en el laberinto
         for x, y in solucion:
             if 0 <= y < len(maze_copy) and 0 <= x < len(maze_copy[0]):
-                maze_copy[y][x] = 2
+                maze_copy[x][y] = 2
 
         # Muestra el laberinto
         plt.imshow(maze_copy, cmap='hot')
