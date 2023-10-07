@@ -6,7 +6,7 @@ import csv
 
 class Main :
     def main():        
-        file_read = csv.reader(open("archivo3.csv", encoding= 'utf-8-sig'),  delimiter=';')
+        file_read = csv.reader(open("archivo31.csv", encoding= 'utf-8-sig'),  delimiter=';')
         maze = list(file_read)
         aux = [[int(i) for i in row] for row in maze]
         maze2 = aux
